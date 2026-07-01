@@ -1,7 +1,21 @@
 # Deploying a Linux Server (Ubuntu 24.04) on Proxmox VE
 
-This guide explains how to create and install an Ubuntu Server virtual machine on Proxmox VE. This VM will later be used to run services like Immich or other self-hosted applications.
+This guide explains how to create and configure an Ubuntu Server virtual machine on Proxmox VE. The VM will be used to host Immich and can also serve as a foundation for other self-hosted applications.
 
+In addition to installing Ubuntu Server, this guide covers Docker installation, initial SSH access, and Tailscale VPN setup.
+
+---
+# Immich Installation Guide
+
+## Table of Contents
+
+- [Create a New VM](#create-a-new-vm)
+- [Ubuntu Server Installation](#ubuntu-server-installation)
+- [Post-Installation Setup](#post-installation-setup)
+    - [Docker](#install-docker)
+    - [SSH](#ssh)
+    - [Tailscale](#tailscale)
+    - [QEMU Guest Agent](qemu-guest-agent)
 ---
 
 ## 1. Download Ubuntu Server ISO
@@ -156,12 +170,130 @@ After installation, remove ISO:
 ```text id="iso_remove"
 VM → Hardware → CD/DVD Drive → Do not use any media
 ```
+![Remove CD-DVD](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/9cee3956199e0f3d7bb6bc360cbf662300fe63fd/Images/Remove%20CD.png)
 
 Then reboot VM.
 
 ---
 
-## 3. Optional: Install QEMU Guest Agent (if not selected earlier)
+## 3. Post-Installation Setup
+
+## Docker
+
+The official installation guide for different Linux distributions can be found here: https://docs.docker.com/engine/install
+Install Docker using the official convenience script:
+
+```bash
+curl -fsSL https://get.docker.com | sh
+```
+
+Add your user to the docker group so you can run Docker commands without sudo:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+Verify the installation:
+
+```bash
+docker --version
+docker compose version
+```
+
+Docker is not running yet, enable and start the service:
+```bash
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+Verify the docker status:
+```bash
+sudo systemctl status docker 
+```
+![](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/bbdb2cf3b30c5915dc26f1e7397fc747f5cd4bfa/Images/Docker%20status.png)
+
+Docker is active and running, no further action is required.
+---
+
+
+## SSH
+
+After Ubuntu Server is installed, perform the following steps.
+
+## Update the system
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+---
+
+Check that the SSH service is running:
+
+```bash
+systemctl status ssh
+```
+
+If SSH is not running, enable and start it:
+
+```bash
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+---
+
+## First SSH remote access
+
+On your local computer or in the Termius mobile app, create a new SSH connection. Enter your Ubuntu username at the server's IP address, and your password.
+```bash
+ssh username@server_ip
+```
+Example:
+```bash
+ssh mikemilenk@192.168.1.105
+Password:
+```
+The first time you connect, you'll be prompted to accept the server's host fingerprint. Once accepted, you'll be logged into the Linux Server remotely.
+
+
+Verify that you can connect without entering your password.
+
+---
+
+### Tailscale
+
+Install Tailscale:
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
+Authenticate your server:
+
+```bash
+sudo tailscale up
+```
+
+Follow the URL displayed in the terminal to sign in and authorize the device.
+
+---
+
+You can SSH into the server using its Tailscale IP address:
+```bash
+ssh user@tailscale_ip
+```
+Example:
+```bash
+ssh mikemilenk@100.90.80.70
+Password:
+```
+
+This works the same as regular SSH, but over the secure Tailscale network, allowing you to access the server from outside your local network.
+
+---
+
+## 4. Optional: Install QEMU Guest Agent (if not selected earlier)
 
 Inside Ubuntu:
 ```bash id="guest_agent"
