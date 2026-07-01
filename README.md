@@ -148,7 +148,7 @@ You will get a new IP address and DHCP configuration here. You can change it lat
 ### Ubuntu Pro
 - Skip
 
-### SSH
+### SSH Configuration
 - Install OpenSSH server (enable)
 - I did not import SSH keys, since I don't hae them. Will create a new SSH connection
 ![SSH Configs](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/SSH%20Config.png)
