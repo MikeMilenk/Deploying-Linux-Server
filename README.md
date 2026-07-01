@@ -20,7 +20,7 @@ PVE → local (storage) → ISO Images → Upload
 
 ---
 
-# Create a New VM
+## Create a New VM
 
 In Proxmox web interface:
 
@@ -40,7 +40,7 @@ Click **Next**
 
 ---
 
-# OS Setup
+## OS Setup
 
 * Storage **local**
 * Select **Use CD/DVD disc image file (ISO)**
@@ -54,7 +54,7 @@ Click **Next**
 
 ---
 
-# System Configuration
+## System Configuration
 
 Recommended settings:
 
@@ -68,7 +68,7 @@ Click **Next**
 
 ---
 
-# Disk Configuration
+## Disk Configuration
 
 Here you select where the VM disk will be stored.
 
@@ -81,7 +81,7 @@ Click **Next**
 
 ---
 
-# CPU and Memory
+## CPU and Memory
 
 * **CPU:** 2–4 cores (depends on workload)
 * **Memory:** 8 GB minimum for Ubuntu Server with Immich installed. 16 GB is better. Note: 7812 MiB is ~8192 MB or 8 GB
@@ -92,7 +92,7 @@ Click **Next**
 
 ---
 
-# Network Configuration (leave defaults)
+## Network Configuration (leave defaults)
 
 * **Bridge:** `vmbr0`
 * Model: **VirtIO (paravirtualized)**
@@ -102,7 +102,7 @@ Click **Next**
 
 ---
 
-# Finish Setup
+## Finish Setup
 
 Review settings and click **Finish**.
 ![Confirmation](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Confirmation.png)
@@ -149,7 +149,7 @@ You will get a new IP address and DHCP configuration here. You can change it lat
 
 ---
 
-## 9. Post-Installation (Important)
+## Post-Installation (Important)
 
 After installation, remove ISO:
 
