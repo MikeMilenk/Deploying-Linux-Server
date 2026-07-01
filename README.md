@@ -53,7 +53,7 @@ Click **Next**
 
 ---
 
-## OS Setup
+### OS Setup
 
 * Storage **local**
 * Select **Use CD/DVD disc image file (ISO)**
@@ -67,7 +67,7 @@ Click **Next**
 
 ---
 
-## System Configuration
+### System Configuration
 
 Recommended settings:
 
@@ -81,7 +81,7 @@ Click **Next**
 
 ---
 
-## Disk Configuration
+### Disk Configuration
 
 Here you select where the VM disk will be stored.
 
@@ -94,7 +94,7 @@ Click **Next**
 
 ---
 
-## CPU and Memory
+### CPU and Memory
 
 * **CPU:** 2–4 cores (depends on workload)
 * **Memory:** 8 GB minimum for Ubuntu Server with Immich installed. 16 GB is better. Note: 7812 MiB is ~8192 MB or 8 GB
@@ -105,7 +105,7 @@ Click **Next**
 
 ---
 
-## Network Configuration (leave defaults)
+### Network Configuration (leave defaults)
 
 * **Bridge:** `vmbr0`
 * Model: **VirtIO (paravirtualized)**
@@ -115,7 +115,7 @@ Click **Next**
 
 ---
 
-## Finish Setup
+### Finish Setup
 
 Review settings and click **Finish**.
 ![Confirmation](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Confirmation.png)
@@ -129,7 +129,7 @@ Review settings and click **Finish**.
 - Type: Ubuntu Server (only)
 ![Installation type](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/c660d90bde94a8779a8d71cbc55400a94cbb6c03/Images/Type%20of%20install.png)
 
-# Network Configuration (leave defaults)
+### Network Configuration (leave defaults)
 - Proxy: empty (default)
 - Mirror: auto-detect → Done
 ![Mirror configs](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/c660d90bde94a8779a8d71cbc55400a94cbb6c03/Images/Mirror%20Address.png)
@@ -137,27 +137,27 @@ Review settings and click **Finish**.
 You will get a new IP address and DHCP configuration here. You can change it later.
 ![Network Config](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/Networks%20Config.png)
 
-# Storage
+### Storage
 - Use entire disk
 - Enable LVM group
 ![Storage](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/Storage.png)
 
-# User setup
+### User setup
 - Create username and password
 
-# Ubuntu Pro
+### Ubuntu Pro
 - Skip
 
-# SSH
+### SSH
 - Install OpenSSH server (enable)
 - I did not import SSH keys, since I don't hae them. Will create a new SSH connection
 ![SSH Configs](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/SSH%20Config.png)
 
-# Snaps
+### Snaps
 - Leave default
 ![Snaps features](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/Server%20snaps.png)
 
-# Finish
+### Finish
 - Install Ubuntu
 
 ---
@@ -175,7 +175,7 @@ Then reboot VM.
 
 ---
 
-### 3. Post-Installation Setup
+# 3. Post-Installation Setup
 
 ## Docker
 
@@ -219,7 +219,7 @@ Docker is active and running, no further action is required.
 
 After Ubuntu Server is installed, perform the following steps.
 
-## Update the system
+### Update the system
 
 ```bash
 sudo apt update && sudo apt upgrade -y
