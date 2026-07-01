@@ -4,7 +4,7 @@ This guide explains how to create and install an Ubuntu Server virtual machine o
 
 ---
 
-## 0. Download Ubuntu Server ISO
+## 1. Download Ubuntu Server ISO
 
 First, download the Ubuntu Server image:
 
@@ -20,7 +20,7 @@ PVE → local (storage) → ISO Images → Upload
 
 ---
 
-## 1. Create a New VM
+# Create a New VM
 
 In Proxmox web interface:
 
@@ -40,7 +40,7 @@ Click **Next**
 
 ---
 
-## 2. OS Setup
+# OS Setup
 
 * Storage **local**
 * Select **Use CD/DVD disc image file (ISO)**
@@ -54,7 +54,7 @@ Click **Next**
 
 ---
 
-## 3. System Configuration
+# System Configuration
 
 Recommended settings:
 
@@ -68,7 +68,7 @@ Click **Next**
 
 ---
 
-## 4. Disk Configuration
+# Disk Configuration
 
 Here you select where the VM disk will be stored.
 
@@ -81,7 +81,7 @@ Click **Next**
 
 ---
 
-## 5. CPU and Memory
+# CPU and Memory
 
 * **CPU:** 2–4 cores (depends on workload)
 * **Memory:** 8 GB minimum for Ubuntu Server with Immich installed. 16 GB is better. Note: 7812 MiB is ~8192 MB or 8 GB
@@ -92,7 +92,7 @@ Click **Next**
 
 ---
 
-## 6. Network Configuration (leave defaults)
+# Network Configuration (leave defaults)
 
 * **Bridge:** `vmbr0`
 * Model: **VirtIO (paravirtualized)**
@@ -102,24 +102,50 @@ Click **Next**
 
 ---
 
-## 7. Finish Setup
+# Finish Setup
 
 Review settings and click **Finish**.
 ![Confirmation](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Confirmation.png)
 
 ---
 
-## 8. Start Installation
+## 2 # Ubuntu Server Installation
 
-1. Select the VM
-2. Click **Start**
-3. Open **Console**
-4. Follow Ubuntu installation steps:
-   * Language
-   * Keyboard
-   * Network (DHCP usually fine)
-   * Disk installation (use default guided setup)
-   * Create user and password
+- Update to new installer
+- Keyboard layout: English (US)
+- Type: Ubuntu Server (only)
+![Installation type](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/c660d90bde94a8779a8d71cbc55400a94cbb6c03/Images/Type%20of%20install.png)
+
+## Network Configuration (leave defaults)
+- Proxy: empty (default)
+- Mirror: auto-detect → Done
+![Mirror configs](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/c660d90bde94a8779a8d71cbc55400a94cbb6c03/Images/Mirror%20Address.png)
+
+You will get a new IP address and DHCP configuration here. You can change it later.
+![Network Config](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/Networks%20Config.png)
+
+## Storage
+- Use entire disk
+- Enable LVM group
+![Storage](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/Storage.png)
+
+## User setup
+- Create username and password
+
+## Ubuntu Pro
+- Skip
+
+## SSH
+- Install OpenSSH server (enable)
+- I did not import SSH keys, since I don't hae them. Will create a new SSH connection
+![SSH Configs](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/SSH%20Config.png)
+
+## Snaps
+- Leave default
+![Snaps features](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/1417b632c43376f130649b70bdf62d50bb5d6ad8/Images/Server%20snaps.png)
+
+## Finish
+- Install Ubuntu
 
 ---
 
@@ -135,7 +161,7 @@ Then reboot VM.
 
 ---
 
-## 10. Optional: Install QEMU Guest Agent (if not selected earlier)
+## 3. Optional: Install QEMU Guest Agent (if not selected earlier)
 
 Inside Ubuntu:
 ```bash id="guest_agent"
@@ -147,7 +173,3 @@ sudo systemctl enable --now qemu-guest-agent
 This improves Proxmox integration (IP display, shutdown control, etc.).
 
 ---
-
-## Result
-
-You now have a working Ubuntu Server VM running on Proxmox, ready for deploying services like Immich, Docker, or other self-hosted applications.
