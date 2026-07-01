@@ -27,6 +27,7 @@ In Proxmox web interface:
 ```text id="vm_create"
 Click "Create VM"
 ```
+![Create VM](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Create%20VM.png)
 
 ### Basic Settings:
 
@@ -35,6 +36,7 @@ Click "Create VM"
 * **Name:** I named as `Immich`
 
 Click **Next**
+![General](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/General.png)
 
 ---
 
@@ -48,6 +50,7 @@ Click **Next**
   * Version: **Ubuntu (latest)**
 
 Click **Next**
+![OS](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/OS.png)
 
 ---
 
@@ -61,6 +64,7 @@ Recommended settings:
 * Enable **QEMU Agent** (can be installed later in OS)
 
 Click **Next**
+![System](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/System.png)
 
 ---
 
@@ -73,6 +77,7 @@ Here you select where the VM disk will be stored.
 * **Bus/Device:** VirtIO SCSI (recommended)
 
 Click **Next**
+![Disks](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Disks.png)
 
 ---
 
@@ -82,6 +87,8 @@ Click **Next**
 * **Memory:** 8 GB minimum for Ubuntu Server with Immich installed. 16 GB is better. Note: 7812 MiB is ~8192 MB or 8 GB
 
 Click **Next**
+![CPU](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/CPU.png)
+![Memory](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Memory.png)
 
 ---
 
@@ -91,12 +98,14 @@ Click **Next**
 * Model: **VirtIO (paravirtualized)**
 
 Click **Next**
+![Network](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Network.png)
 
 ---
 
 ## 7. Finish Setup
 
 Review settings and click **Finish**.
+![Confirmation](https://github.com/MikeMilenk/Deploying-Linux-Server/blob/7c23515ea0c22fe5fd082d75d88028b5d6bacd1d/Images/Confirmation.png)
 
 ---
 
