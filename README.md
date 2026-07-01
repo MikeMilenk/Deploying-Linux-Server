@@ -15,7 +15,7 @@ In addition to installing Ubuntu Server, this guide covers Docker installation, 
     - [Docker](#install-docker)
     - [SSH](#ssh)
     - [Tailscale](#tailscale)
-    - [QEMU Guest Agent](qemu-guest-agent)
+    - [QEMU Guest Agent](optional-install-qemu-gues-agent-if-not-selected-earlier)
 ---
 
 ## 1. Download Ubuntu Server ISO
