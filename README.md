@@ -17,7 +17,7 @@ In addition to installing Ubuntu Server, this guide covers Docker installation, 
     - [Tailscale](#tailscale)
 ---
 
-## 1. Download Ubuntu Server ISO
+## Download Ubuntu Server ISO
 
 First, download the Ubuntu Server image:
 
@@ -122,7 +122,7 @@ Review settings and click **Finish**.
 
 ---
 
-## 2. Ubuntu Server Installation
+## Ubuntu Server Installation
 
 - Update to new installer
 - Keyboard layout: English (US)
