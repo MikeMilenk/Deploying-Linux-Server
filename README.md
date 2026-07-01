@@ -12,7 +12,7 @@ In addition to installing Ubuntu Server, this guide covers Docker installation, 
 - [Create a New VM](#create-a-new-vm)
 - [Ubuntu Server Installation](#ubuntu-server-installation)
 - [Post-Installation Setup](#post-installation-setup)
-    - [Docker](#install-docker)
+    - [Docker](#docker)
     - [SSH](#ssh)
     - [Tailscale](#tailscale)
 ---
