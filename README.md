@@ -175,7 +175,7 @@ Then reboot VM.
 
 ---
 
-# 3. Post-Installation Setup
+# Post-Installation Setup
 
 ## Docker
 
