@@ -109,7 +109,7 @@ Review settings and click **Finish**.
 
 ---
 
-## 2 # Ubuntu Server Installation
+## 2. Ubuntu Server Installation
 
 - Update to new installer
 - Keyboard layout: English (US)
