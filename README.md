@@ -15,7 +15,6 @@ In addition to installing Ubuntu Server, this guide covers Docker installation, 
     - [Docker](#install-docker)
     - [SSH](#ssh)
     - [Tailscale](#tailscale)
-    - [Optional: QEMU Guest Agent](optional-install-qemu-gues-agent-if-not-selected-earlier)
 ---
 
 ## 1. Download Ubuntu Server ISO
@@ -176,7 +175,7 @@ Then reboot VM.
 
 ---
 
-## 3. Post-Installation Setup
+### 3. Post-Installation Setup
 
 ## Docker
 
@@ -261,7 +260,7 @@ Verify that you can connect without entering your password.
 
 ---
 
-### Tailscale
+## Tailscale
 
 Install Tailscale:
 
